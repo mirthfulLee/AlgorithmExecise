@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+/.vs/AlgorithmExercise/v16
+/Debug
+/AlgorithmExercise.sln
+/AlgorithmExercise.vcxproj.user
+/AlgorithmExercise.vcxproj.filters
+/AlgorithmExercise.vcxproj
