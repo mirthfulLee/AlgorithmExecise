@@ -13,7 +13,7 @@ map<int, int> father, level;
 void traverse(int f, int inLeft, int inRight, int preLeft, int preRight) {
 	if (inLeft > inRight) return;
 	father[pre[preLeft]] = f;
-	level[pre[preLeft]] = level.find(f)->second + 1;
+	level[pre[preLeft]] = level[f] + 1;
 	int root = inLeft;
 	while (in[root] != pre[preLeft]) root++;
 	traverse(pre[preLeft], inLeft, root - 1, preLeft + 1, preLeft + root - inLeft);
@@ -45,15 +45,15 @@ int main() {
 			continue;
 		}
 
-		if (level.find(U)->second > level.find(V)->second) {
+		if (level[U] > level[V]) {
 			hi = U; lo = V;
 		}
 		else {
 			lo = U;hi = V;
 		}
-		while (level.find(lo)->second < level.find(hi)->second) hi = father.find(hi)->second;
+		while (level[lo] < level[hi]) hi = father[hi];
 		if (lo == hi) {
-			if (level.find(U)->second > level.find(V)->second) {
+			if (level[U] > level[V]) {
 				printf("%d is an ancestor of %d.\n", V, U);
 			}
 			else {
@@ -62,8 +62,8 @@ int main() {
 			continue;
 		}
 		while (lo != hi) {
-			lo = father.find(lo)->second;
-			hi = father.find(hi)->second;
+			lo = father[lo];
+			hi = father[hi];
 		}
 		printf("LCA of %d and %d is %d.\n", U, V, lo);
 	}

@@ -1,5 +1,5 @@
 //
-// Created by Êú®Â≠êÂèàÊ¨† on 2021/3/30.
+// Created by ƒæ◊””÷«∑ on 2021/3/30.
 //
 
 #include<iostream>
@@ -9,14 +9,14 @@ struct BinNode
 {
 	int value;
 	BinNode* left, * right;
-	BinNode(int v):value(v),left(NULL),right(NULL){}
+	BinNode(int v) :value(v), left(NULL), right(NULL) {}
 };
 int N, pre[40], post[40];
-BinNode *root;
+BinNode* root;
 queue<int> in;
 bool isUnique = true;
 
-void traverse(BinNode *root, int preLeft, int preRight, int postLeft, int postRight) {
+void traverse(BinNode* root, int preLeft, int preRight, int postLeft, int postRight) {
 	if (pre[preLeft] == post[postRight]) {
 		isUnique = false;
 		BinNode* r = new BinNode(post[postRight]);
