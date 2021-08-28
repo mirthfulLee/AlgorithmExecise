@@ -3,7 +3,7 @@
 using namespace std;
 
 string selling, needing;
-int a[128],b[128], extra, missing;
+int a[128], b[128], extra, missing;
 
 int main() {
 	cin >> selling >> needing;
