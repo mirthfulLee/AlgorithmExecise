@@ -36,9 +36,9 @@ node* rotateRightLeft(node* root) {
 node* treeBalancing(node* root) {
 	int f = getBalanceFactor(root), l = getBalanceFactor(root->left), r = getBalanceFactor(root->right);
 	if (abs(f) <= 1) return root;
-	if (f > 1) 
-		root = l>0?rotateRight(root): rotateLeftRight(root);
-	else root = r<0? rotateLeft(root): rotateRightLeft(root);
+	if (f > 1)
+		root = l > 0 ? rotateRight(root) : rotateLeftRight(root);
+	else root = r < 0 ? rotateLeft(root) : rotateRightLeft(root);
 	return root;
 }
 node* insert(node* root, int v) {
