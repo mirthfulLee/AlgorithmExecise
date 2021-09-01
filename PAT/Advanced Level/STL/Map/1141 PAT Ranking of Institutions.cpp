@@ -61,7 +61,7 @@ int main() {
 		if (i > 0 && cnt[i].tws == cnt[i - 1].tws)
 			cnt[i].rank = cnt[i - 1].rank;
 		else cnt[i].rank = i + 1;
-		printf("%d %s %d %d\n", cnt[i].rank, cnt[i].name.c_str(), (int) cnt[i].tws, cnt[i].num);
+		printf("%d %s %d %d\n", cnt[i].rank, cnt[i].name.c_str(), (int)cnt[i].tws, cnt[i].num);
 	}
 
 }
