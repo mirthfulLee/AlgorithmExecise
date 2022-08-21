@@ -12,6 +12,8 @@
         "xstring": "cpp",
         "xtree": "cpp",
         "xutility": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "xlocale": "cpp",
+        "system_error": "cpp"
     }
 }
