@@ -17,10 +17,11 @@ int head(int k)
 
 void merge(int a, int b)
 {
-    if (head(a) < head(b))
-        gangs[b] = head(a);
+    int ha = head(a), hb = head(b);
+    if ( ha < hb )
+        gangs[hb] = ha;
     else
-        gangs[a] = head(b);
+        gangs[ha] = hb;
 }
 
 int main()
@@ -50,7 +51,8 @@ int main()
         }
     }
     if (!haveSuspect){
-        printf("None");
+        // FIXME: 注意换行符
+        printf("None\n");
         return 0;
     }
     for (int i = 1; i <= n; i++)
