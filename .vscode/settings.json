@@ -15,6 +15,7 @@
         "set": "cpp",
         "xlocale": "cpp",
         "system_error": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "limits": "cpp"
     }
 }
