@@ -16,6 +16,7 @@
         "xlocale": "cpp",
         "system_error": "cpp",
         "algorithm": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "xiosbase": "cpp"
     }
 }
