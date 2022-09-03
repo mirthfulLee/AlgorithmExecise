@@ -24,6 +24,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cin >> num;
+        // FIXME: 探针最多可以尝试n次
         for (step = 0; step < n; step++)
         {
             h = (num + step * step) % Tsize;
