@@ -18,6 +18,7 @@
         "algorithm": "cpp",
         "limits": "cpp",
         "xiosbase": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "map": "cpp"
     }
 }
