@@ -19,6 +19,8 @@
         "limits": "cpp",
         "xiosbase": "cpp",
         "string": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "istream": "cpp",
+        "unordered_set": "cpp"
     }
 }
