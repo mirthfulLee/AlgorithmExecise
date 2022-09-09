@@ -82,11 +82,15 @@ int main()
     }
 
     for (int i = 0; i < neuralNum; i++)
+    {
         neureList[i].in.resize(totalK + 1010);
+        neureList[i].syns.reserve(256);
+    }
 
     for (int i = 0; i < sourceNum; i++)
     {
         cin >> sourceList[i].r;
+        sourceList[i].syns.reserve(256);
     }
     for (int i = 0; i < synapseNum; i++)
     {
