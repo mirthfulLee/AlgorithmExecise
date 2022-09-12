@@ -4,21 +4,18 @@ using namespace std;
 
 int main()
 {
-    // FIXME: 有一个点没过
     int n;
-    long long a, b, c, sa, sb, sc, la, lb, lc;
+    const long long denom = 0x00ffffff;
+    long long a, b, c, sumS, sumL;
     bool result;
     cin >> n;
     for (int i = 1; i <= n;i++){
-        cin >> a >> b >> c;
-        sa = a / 0x0fffffff;
-        sb = b / 0x0fffffff;
-        sc = c / 0x0fffffff;
-        la = a % 0x0fffffff;
-        lb = b % 0x0fffffff;
-        lc = c % 0x0fffffff;
-        printf("%lld, %lld;  %lld, %lld\n", sa, sb, la, lb);
-        result = (sa + sb > sc) || (sa + sb == sc && la + lb > lc);
+        scanf("%lld %lld %lld", &a, &b, &c);
+        // a+b-c
+        sumL = a % denom + b % denom - c % denom;
+        sumS = a / denom + b / denom - c / denom + sumL / denom ;
+        sumL %= denom;
+        result = (sumS > 0) || (sumS == 0 && sumL > 0);
         printf("Case #%d: %s\n", i, result ? "true" : "false");
     }
 }
