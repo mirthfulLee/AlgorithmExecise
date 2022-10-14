@@ -1,5 +1,6 @@
 // 202112-4 磁盘文件操作
-// FIXME：只拿了15分，有错误，还有超时
+#include<fstream>
+// FIXME：只拿了60分，超时
 #include <iostream>
 #include <map>
 #include <vector>
@@ -59,10 +60,13 @@ void deleteArea(int id, int l, int r)
         it->second.r = l - 1;
         it++;
     }
-    while (it->first <= r)
+    while (it->first <= r && it != area.end())
     {
         if (it->second.r > r)
+        {
             area[r + 1] = it->second;
+            it->second.r = r;
+        }
         it->second.occupied = false;
         it++;
     }
@@ -78,10 +82,13 @@ void recoverArea(int id, int l, int r)
         it->second.r = l - 1;
         it++;
     }
-    while (it->first <= r)
+    while (it->first <= r && it != area.end())
     {
         if (it->second.r > r)
+        {
             area[r + 1] = it->second;
+            it->second.r = r;
+        }
         it->second.occupied = true;
         it++;
     }
@@ -97,7 +104,7 @@ void coverArea(int id, int l, int r, int x)
         it->second.r = l - 1;
         it++;
     }
-    while (it->first <= r)
+    while (it->first <= r && it != area.end())
     {
         if (it->second.r > r)
             area[r + 1] = it->second;
@@ -111,6 +118,9 @@ void coverArea(int id, int l, int r, int x)
 
 int main()
 {
+    // ifstream cin("1.in");
+    // ofstream cout("my2.ans");
+
     cin >> n >> m >> k;
     info emptyBlock = {m, 0, 0, false};
     area[1] = emptyBlock;
@@ -158,9 +168,9 @@ int main()
             auto it = area.upper_bound(p);
             it--;
             if (!it->second.occupied)
-                printf("0 0\n");
+                cout << "0 0" << endl;
             else
-                printf("%d %d\n", it->second.owner, it->second.val);
+                cout << it->second.owner << ' ' << it->second.val << endl;
         }
     }
 }
