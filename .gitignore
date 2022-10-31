@@ -40,3 +40,6 @@
 
 .vs
 /.vscode
+/main.dSYM
+main
+.DS_Store
