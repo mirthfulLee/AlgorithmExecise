@@ -44,3 +44,4 @@
 main
 .DS_Store
 .history
+.clangd
