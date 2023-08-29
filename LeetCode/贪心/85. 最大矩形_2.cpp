@@ -1,4 +1,6 @@
 // 85. 最大矩形
+// 将矩形变为柱形图, 然后就可以参考 `84. 柱状图中最大的矩形` 解法
+// 如果暴力解法不行, 需要进一步采用单调栈
 #include <algorithm>
 #include <functional>
 #include <iostream>

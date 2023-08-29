@@ -1,4 +1,5 @@
 // 1727. 重新排列后的最大子矩阵
+// 将列中连续的1转换为柱形来优化计算.
 #include <algorithm>
 #include <functional>
 #include <iostream>
