@@ -38,7 +38,7 @@
 /AlgorithmExercise.vcxproj
 
 .vs
-/.vscode
+.vscode
 /main.dSYM
 main
 .DS_Store
